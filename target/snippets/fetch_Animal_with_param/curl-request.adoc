@@ -1,0 +1,4 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/animals?mood=HAPPY&type=WALKING' -i -X GET
+----

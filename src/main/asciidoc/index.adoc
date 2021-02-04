@@ -3,25 +3,65 @@
 This is an example output for a service running at http://localhost:8080:
 
 .curl request
+Get All Animals
 include::{snippets}/animal/curl-request.adoc[]
 
+Get Animals With Parameter
+include::{snippets}/fetch_Animal_with_param/curl-request.adoc[]
+
+Get All Habitats
+include::{snippets}/habitats/curl-request.adoc[]
+
 .request
+Get All Animals
 include::{snippets}/animal/http-request.adoc[]
+Get Animals With Parameter
+include::{snippets}/fetch_Animal_with_param/http-request.adoc[]
+Get All Habitats
+include::{snippets}/habitats/http-request.adoc[]
 
 .response
+Get All Animals
 include::{snippets}/animal/http-response.adoc[]
+Get Animals With Parameter
+include::{snippets}/fetch_Animal_with_param/http-response.adoc[]
+Get All Habitats
+include::{snippets}/habitats/http-response.adoc[]
 
 .request body
+Get All Animals
 include::{snippets}/animal/request-body.adoc[]
+Get Animals With Parameter
+include::{snippets}/fetch_Animal_with_param/request-body.adoc[]
+Get All Habitats
+include::{snippets}/habitats/request-body.adoc[]
 
 .response body
+Get All Animals
 include::{snippets}/animal/response-body.adoc[]
+Get Animals With Parameter
+include::{snippets}/fetch_Animal_with_param/response-body.adoc[]
+Get All Habitats
+include::{snippets}/habitats/response-body.adoc[]
 
 .httpie request
+Get All Animals
 include::{snippets}/animal/httpie-request.adoc[]
+Get Animals With Parameter
+include::{snippets}/fetch_Animal_with_param/httpie-request.adoc[]
+Get All Habitats
+include::{snippets}/habitats/httpie-request.adoc[]
 
 .response fields
+Get All Animals
 include::{snippets}/animal/response-fields.adoc[]
+Get Animals With Parameter
+include::{snippets}/fetch_Animal_with_param/response-fields.adoc[]
+Get All Habitats
+include::{snippets}/habitats/response-fields.adoc[]
+
+
+
 
 
 

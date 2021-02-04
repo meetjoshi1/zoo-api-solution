@@ -1,0 +1,12 @@
+|===
+|Path|Type|Description
+
+|`+[0].name+`
+|`+String+`
+|Name of the habitat
+
+|`+[0].type+`
+|`+String+`
+|type of the habitat
+
+|===

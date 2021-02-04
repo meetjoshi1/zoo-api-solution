@@ -1,4 +1,5 @@
 [source,bash]
 ----
-$ http GET 'http://localhost:8080/animals'
+$ echo '{"name":"monkey","type":"WALKING","mood":null,"habitat":null}' | http POST 'http://localhost:8080/animals' \
+    'Content-Type:application/json;charset=UTF-8'
 ----

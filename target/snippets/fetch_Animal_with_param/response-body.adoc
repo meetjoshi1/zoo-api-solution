@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+[{"name":"chimp","type":"WALKING","mood":"HAPPY","habitat":null}]
+----

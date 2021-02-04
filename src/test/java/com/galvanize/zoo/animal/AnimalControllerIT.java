@@ -15,8 +15,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import javax.transaction.Transactional;
 import java.util.List;
 
-import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
-import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
+import static org.springframework.restdocs.payload.PayloadDocumentation.*;
+import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -78,6 +78,7 @@ class AnimalControllerIT {
                 .contentType(MediaType.APPLICATION_JSON)
         )
             .andExpect(status().isConflict());
+
     }
 
     @Test
@@ -143,6 +144,7 @@ class AnimalControllerIT {
             .andExpect(jsonPath("[0].habitat").isEmpty())
             .andExpect(jsonPath("[1].name").value("chimp"))
             .andExpect(jsonPath("[1].habitat.name").value("Monkey's Jungle"));
+
     }
 
     @Test
@@ -159,6 +161,23 @@ class AnimalControllerIT {
             .andExpect(jsonPath("length()").value(1))
             .andExpect(jsonPath("[0].name").value("chimp"))
             .andExpect(jsonPath("[0].mood").value(Mood.HAPPY.name()))
-            .andExpect(jsonPath("[0].type").value(AnimalType.WALKING.name()));
+            .andExpect(jsonPath("[0].type").value(AnimalType.WALKING.name()))
+                .andDo(document("fetch_Animal_with_param",responseFields(
+                        fieldWithPath("[0].mood").description("The animal's mood")
+                                .attributes(key("constraints")
+                                        .value("HAPPY")),
+                        fieldWithPath("[0].type").description("The animal's type")
+                                .attributes(key("constraints")
+                                        .value("WALKING")),
+                        fieldWithPath("[0].name").description("The animal's name"),
+                        fieldWithPath("[0].habitat").description("The animal's habitat")
+                        )
+//                        ,responseFields(
+//                        fieldWithPath("[0].name").description("Name of the animal"),
+//                        fieldWithPath("[0].mood").description("Mood of the animal"),
+//                        fieldWithPath("[0].type").description("Type of the animal"),
+//                        fieldWithPath("[0].habitat").description("Habitat of the animal")
+//                )
+                ));
     }
 }
