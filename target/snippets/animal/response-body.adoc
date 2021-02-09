@@ -1,4 +1,4 @@
 [source,options="nowrap"]
 ----
-
+[{"name":"monkey","type":"WALKING","mood":"UNHAPPY","habitat":null}]
 ----
